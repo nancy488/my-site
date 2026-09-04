@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HealthyfiKey | Clinical Authority & Accessible Wellness</title>
+<meta name="description" content="Evidence-based nutrition guides, independent supplement reviews, and gut-health protocols from HealthyfiKey — clinical authority, made accessible."/>
+<link rel="canonical" href="https://healthyfikey.com/"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="alternate icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="HealthyfiKey"/>
+<meta property="og:title" content="HealthyfiKey | Clinical Authority & Accessible Wellness"/>
+<meta property="og:description" content="Evidence-based nutrition guides, independent supplement reviews, and gut-health protocols from HealthyfiKey — clinical authority, made accessible."/>
+<meta property="og:url" content="https://healthyfikey.com/"/>
+<meta property="og:image" content="https://healthyfikey.com/images/og-cover.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="HealthyfiKey | Clinical Authority & Accessible Wellness"/>
+<meta name="twitter:description" content="Evidence-based nutrition guides, independent supplement reviews, and gut-health protocols from HealthyfiKey — clinical authority, made accessible."/>
+<meta name="twitter:image" content="https://healthyfikey.com/images/og-cover.png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "outline": "#6c7a71",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "on-surface-variant": "#3c4a42",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#d3e4fe",
+                        "primary": "#006c49",
+                        "secondary-container": "#d5e0f8",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#4edea3",
+                        "surface": "#f7f9fb",
+                        "on-tertiary-container": "#2a3a4f",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-primary-fixed": "#002113",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#111c2d",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#505f76",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#191c1e",
+                        "on-primary-container": "#00422b",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-surface": "#191c1e",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "primary-fixed": "#6ffbbe",
+                        "on-primary-fixed-variant": "#005236",
+                        "background": "#f7f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#4edea3",
+                        "tertiary-container": "#94a4bd",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "on-secondary-container": "#586377",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#545f73",
+                        "primary-container": "#10b981",
+                        "surface-dim": "#d8dadc",
+                        "surface-tint": "#006c49",
+                        "outline-variant": "#bbcabf",
+                        "secondary-fixed": "#d8e3fb"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        xl: "80px",
+                        lg: "48px",
+                        "container-max": "1200px",
+                        md: "24px",
+                        gutter: "24px",
+                        sm: "12px",
+                        xs: "4px",
+                        base: "8px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter", "system-ui", "sans-serif"],
+                        "display-lg-mobile": ["\"Source Serif 4\"", "Georgia", "serif"],
+                        "headline-lg": ["\"Source Serif 4\"", "Georgia", "serif"],
+                        "body-lg": ["Inter", "system-ui", "sans-serif"],
+                        "display-lg": ["\"Source Serif 4\"", "Georgia", "serif"],
+                        "caption": ["Inter", "system-ui", "sans-serif"],
+                        "headline-md": ["\"Source Serif 4\"", "Georgia", "serif"],
+                        "label-md": ["Inter", "system-ui", "sans-serif"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "display-lg-mobile": ["36px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "headline-lg": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.7", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "caption": ["12px", { lineHeight: "1.4", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "label-md": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }]
+                    },
+                    boxShadow: {
+                        "level-1": "0px 4px 20px rgba(30, 41, 59, 0.05)",
+                        "level-2": "0px 10px 30px rgba(30, 41, 59, 0.12)"
+                    }
+                }
+            }
+        }
+    </script>
+<link rel="stylesheet" href="css/style.css"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "HealthyfiKey",
+  "url": "https://healthyfikey.com/",
+  "logo": "https://healthyfikey.com/images/og-cover.png",
+  "description": "Evidence-based nutrition, supplement reviews, and wellness protocols."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "HealthyfiKey",
+  "url": "https://healthyfikey.com/"
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased selection:bg-primary selection:text-on-primary min-h-screen flex flex-col">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="bg-surface border-b border-outline-variant w-full sticky top-0 z-50">
+<div class="flex flex-col w-full max-w-container-max mx-auto px-gutter py-md">
+<div class="flex items-center justify-between mb-3 md:mb-4">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight"><a href="index.html" class="hover:opacity-80 transition-opacity">HealthyfiKey</a></h1>
+<button aria-controls="mobile-menu-panel" aria-expanded="false" aria-label="Toggle menu" class="md:hidden text-on-surface-variant hover:text-primary transition-colors p-xs -mr-xs" data-menu-open="false" data-menu-toggle type="button">
+<span class="menu-toggle-icon-open material-symbols-outlined" aria-hidden="true">menu</span>
+<span class="menu-toggle-icon-close material-symbols-outlined" aria-hidden="true">close</span>
+</button>
+</div>
+<nav aria-label="Category" class="hidden md:flex overflow-x-auto gap-8">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 transition-colors duration-200" href="index.html" aria-current="page">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium border-b-2 border-transparent pb-1 hover:text-primary transition-colors duration-200" href="articles/fat-loss-strategies.html">Weight Management</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium border-b-2 border-transparent pb-1 hover:text-primary transition-colors duration-200" href="articles/mediterranean-diet-guide.html">Diet Plans</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium border-b-2 border-transparent pb-1 hover:text-primary transition-colors duration-200" href="articles/premium-probiotic-review.html">Supplements</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium border-b-2 border-transparent pb-1 hover:text-primary transition-colors duration-200" href="articles/morning-superfoods.html">Nutrition</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium border-b-2 border-transparent pb-1 hover:text-primary transition-colors duration-200" href="articles/chronic-stress-gut-health.html">Health & Wellness</a>
+</nav>
+</div>
+<nav aria-label="Category, mobile" class="md:hidden border-t border-outline-variant" id="mobile-menu-panel">
+<ul class="flex flex-col px-gutter divide-y divide-outline-variant/60">
+<li><a class="block py-2.5 font-label-md text-label-md text-primary" href="index.html" aria-current="page">Home</a></li>
+<li><a class="block py-2.5 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="articles/fat-loss-strategies.html">Weight Management</a></li>
+<li><a class="block py-2.5 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="articles/mediterranean-diet-guide.html">Diet Plans</a></li>
+<li><a class="block py-2.5 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="articles/premium-probiotic-review.html">Supplements</a></li>
+<li><a class="block py-2.5 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="articles/morning-superfoods.html">Nutrition</a></li>
+<li><a class="block py-2.5 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="articles/chronic-stress-gut-health.html">Health & Wellness</a></li>
+</ul>
+</nav>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-gutter md:px-[48px] py-xl flex flex-col gap-xl" id="main-content">
+<!-- Hero: featured article -->
+<section class="w-full relative rounded-xl overflow-hidden bg-surface-container-lowest shadow-level-1 group transition-transform duration-300 hover:-translate-y-1 hover:shadow-level-2" aria-labelledby="featured-heading">
+<div class="grid grid-cols-1 lg:grid-cols-2">
+<a class="h-64 lg:h-full min-h-[400px] block bg-surface-container-low" href="articles/fat-loss-strategies.html" tabindex="-1" aria-hidden="true">
+<img alt="" class="w-full h-full object-cover" height="500" loading="eager" src="images/cover-weight-management.svg" width="600"/>
+</a>
+<div class="p-lg flex flex-col justify-center bg-surface-container-lowest">
+<div class="mb-sm">
+<span class="inline-block bg-primary-container/10 text-primary px-sm py-xs rounded-full font-label-md text-label-md">Weight Management</span>
+</div>
+<h2 id="featured-heading" class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-md">
+<a class="group-hover:text-primary transition-colors" href="articles/fat-loss-strategies.html">Top 7 Science-Backed Strategies for Sustainable Fat Loss in 2026</a>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-md line-clamp-3">Discover the latest evidence-based approaches to achieving and maintaining a healthy body composition without restrictive dieting or extreme measures. We explore metabolic flexibility and circadian eating windows.</p>
+<div class="flex items-center gap-sm mt-auto pt-md">
+<img alt="Dr. Sarah Jenkins avatar" class="w-10 h-10 rounded-full object-cover" height="40" loading="lazy" src="images/avatar-sarah-jenkins.svg" width="40"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Dr. Sarah Jenkins</p>
+<p class="font-caption text-caption text-on-surface-variant">PhD in Nutritional Science</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Category filter + article grid -->
+<section class="scroll-mt-32" id="article-feed">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-sm border-b border-outline-variant mb-lg pb-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Latest Evidence</h2>
+<div class="flex overflow-x-auto gap-6" id="category-filters" role="group" aria-label="Filter articles by category">
+<button aria-pressed="true" class="font-label-md text-label-md filter-btn is-active pb-2" data-filter="all" type="button">All Topics</button>
+<button aria-pressed="false" class="font-label-md text-label-md filter-btn pb-2" data-filter="weight-management" type="button">Weight Management</button>
+<button aria-pressed="false" class="font-label-md text-label-md filter-btn pb-2" data-filter="diet-plans" type="button">Diet Plans</button>
+<button aria-pressed="false" class="font-label-md text-label-md filter-btn pb-2" data-filter="supplements" type="button">Supplements</button>
+<button aria-pressed="false" class="font-label-md text-label-md filter-btn pb-2" data-filter="nutrition" type="button">Nutrition</button>
+<button aria-pressed="false" class="font-label-md text-label-md filter-btn pb-2" data-filter="health-wellness" type="button">Health & Wellness</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md" id="article-grid">
+<article class="article-card flex flex-col bg-surface-container-lowest rounded-xl shadow-level-1 overflow-hidden hover:-translate-y-1 hover:shadow-level-2 transition-all duration-300" data-category="weight-management">
+<a class="h-48 w-full block bg-surface-container-low" href="articles/fat-loss-strategies.html" tabindex="-1" aria-hidden="true">
+<img alt="" class="w-full h-full object-cover" height="192" loading="lazy" src="images/cover-weight-management.svg" width="320"/>
+</a>
+<div class="p-md flex flex-col flex-grow">
+<span class="text-primary font-label-md text-label-md mb-xs uppercase tracking-wider">Weight Management</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm line-clamp-2">
+<a class="hover:text-primary transition-colors" href="articles/fat-loss-strategies.html">Top 7 Science-Backed Strategies for Sustainable Fat Loss in 2026</a>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow line-clamp-2">A comprehensive review of metabolic adaptation and long-term adherence strategies.</p>
+<a class="text-primary font-label-md text-label-md mt-auto flex items-center gap-xs hover:underline" href="articles/fat-loss-strategies.html">Read Full Clinical Review <span aria-hidden="true" class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+<article class="article-card flex flex-col bg-surface-container-lowest rounded-xl shadow-level-1 overflow-hidden hover:-translate-y-1 hover:shadow-level-2 transition-all duration-300" data-category="diet-plans">
+<a class="h-48 w-full block bg-surface-container-low" href="articles/mediterranean-diet-guide.html" tabindex="-1" aria-hidden="true">
+<img alt="" class="w-full h-full object-cover" height="192" loading="lazy" src="images/cover-diet-plans.svg" width="320"/>
+</a>
+<div class="p-md flex flex-col flex-grow">
+<span class="text-primary font-label-md text-label-md mb-xs uppercase tracking-wider">Diet Plans</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm line-clamp-2">
+<a class="hover:text-primary transition-colors" href="articles/mediterranean-diet-guide.html">The Mediterranean Diet: A Complete Beginner's Blueprint</a>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow line-clamp-2">Mastering heart-healthy eating patterns supported by decades of cardiovascular research.</p>
+<a class="text-primary font-label-md text-label-md mt-auto flex items-center gap-xs hover:underline" href="articles/mediterranean-diet-guide.html">Read Full Clinical Review <span aria-hidden="true" class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+<article class="article-card flex flex-col bg-surface-container-lowest rounded-xl shadow-level-1 overflow-hidden hover:-translate-y-1 hover:shadow-level-2 transition-all duration-300 md:col-span-2 lg:col-span-1" data-category="supplements">
+<a class="h-48 w-full block bg-surface-container-low" href="articles/premium-probiotic-review.html" tabindex="-1" aria-hidden="true">
+<img alt="" class="w-full h-full object-cover" height="192" loading="lazy" src="images/cover-supplements.svg" width="320"/>
+</a>
+<div class="p-md flex flex-col flex-grow">
+<span class="text-primary font-label-md text-label-md mb-xs uppercase tracking-wider">Supplements</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm line-clamp-2">
+<a class="hover:text-primary transition-colors" href="articles/premium-probiotic-review.html">Premium Probiotic Review: An In-Depth Look at Efficacy and Value</a>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow line-clamp-2">An objective analysis of CFU viability and strain specificity for gut microbiome support.</p>
+<a class="text-primary font-label-md text-label-md mt-auto flex items-center gap-xs hover:underline" href="articles/premium-probiotic-review.html">Read Full Clinical Review <span aria-hidden="true" class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+<article class="article-card flex flex-col bg-surface-container-lowest rounded-xl shadow-level-1 overflow-hidden hover:-translate-y-1 hover:shadow-level-2 transition-all duration-300" data-category="nutrition">
+<a class="h-48 w-full block bg-surface-container-low" href="articles/morning-superfoods.html" tabindex="-1" aria-hidden="true">
+<img alt="" class="w-full h-full object-cover" height="192" loading="lazy" src="images/cover-nutrition.svg" width="320"/>
+</a>
+<div class="p-md flex flex-col flex-grow">
+<span class="text-primary font-label-md text-label-md mb-xs uppercase tracking-wider">Nutrition</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm line-clamp-2">
+<a class="hover:text-primary transition-colors" href="articles/morning-superfoods.html">10 Nutrient-Dense Morning Superfoods for All-Day Energy</a>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow line-clamp-2">Optimize your mitochondrial function with these evidence-based breakfast additions.</p>
+<a class="text-primary font-label-md text-label-md mt-auto flex items-center gap-xs hover:underline" href="articles/morning-superfoods.html">Read Full Clinical Review <span aria-hidden="true" class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+<article class="article-card flex flex-col bg-surface-container-lowest rounded-xl shadow-level-1 overflow-hidden hover:-translate-y-1 hover:shadow-level-2 transition-all duration-300" data-category="health-wellness">
+<a class="h-48 w-full block bg-surface-container-low" href="articles/chronic-stress-gut-health.html" tabindex="-1" aria-hidden="true">
+<img alt="" class="w-full h-full object-cover" height="192" loading="lazy" src="images/cover-wellness.svg" width="320"/>
+</a>
+<div class="p-md flex flex-col flex-grow">
+<span class="text-primary font-label-md text-label-md mb-xs uppercase tracking-wider">Health & Wellness</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm line-clamp-2">
+<a class="hover:text-primary transition-colors" href="articles/chronic-stress-gut-health.html">How Chronic Stress Affects Gut Health (And Simple Ways to Heal It)</a>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow line-clamp-2">Understanding the gut-brain axis and actionable protocols to reduce systemic inflammation.</p>
+<a class="text-primary font-label-md text-label-md mt-auto flex items-center gap-xs hover:underline" href="articles/chronic-stress-gut-health.html">Read Full Clinical Review <span aria-hidden="true" class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+</div>
+<p class="hidden text-center font-body-md text-body-md text-on-surface-variant py-xl" data-empty-state>No articles match that category yet — check back soon, or browse all topics.</p>
+</section>
+
+<section aria-labelledby="newsletter-heading" class="w-full bg-primary-container rounded-xl p-lg md:p-xl flex flex-col md:flex-row items-center justify-between gap-lg relative overflow-hidden shadow-level-2">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" aria-hidden="true"></div>
+<div class="relative z-10 md:w-1/2 text-on-primary">
+<h2 id="newsletter-heading" class="font-display-lg-mobile md:font-headline-lg text-display-lg-mobile md:text-headline-lg font-bold mb-sm">Clinical Insights, Delivered.</h2>
+<p class="font-body-lg text-body-lg opacity-90 mb-0">Join readers getting a weekly digest of evidence-based wellness protocols and independent supplement reviews. No spam, unsubscribe anytime.</p>
+</div>
+<div class="relative z-10 md:w-1/2 w-full max-w-md bg-surface-container-lowest p-md rounded-lg shadow-level-1">
+<form class="flex flex-col gap-sm" data-ajax-form data-netlify="true" data-success-message="Thanks — check your inbox to confirm your subscription." method="POST" name="newsletter" netlify-honeypot="bot-field">
+<input name="form-name" type="hidden" value="newsletter"/>
+<p class="form-honeypot"><label>Leave this field blank<input name="bot-field" tabindex="-1" autocomplete="off"/></label></p>
+<div>
+<label class="sr-only" for="newsletter-email">Email address</label>
+<input class="w-full font-body-md text-body-md px-4 py-3 border border-outline-variant rounded-md focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-shadow" id="newsletter-email" name="email" placeholder="Your best email address" required type="email"/>
+</div>
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md py-3 rounded-md transition-colors shadow-sm" type="submit">Subscribe to Newsletter</button>
+<p class="form-status" data-form-status role="status" aria-live="polite"></p>
+<p class="font-caption text-caption text-on-surface-variant text-center mt-2">No spam. Unsubscribe anytime. View our <a class="underline hover:text-primary" href="legal/privacy-policy.html">Privacy Policy</a>.</p>
+</form>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-low border-t border-outline-variant w-full mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md w-full max-w-container-max mx-auto px-gutter py-lg">
+<div class="col-span-1 md:col-span-2 lg:col-span-1">
+<a class="font-headline-md text-headline-md font-bold text-on-surface mb-sm inline-block hover:text-primary transition-colors" href="index.html">HealthyfiKey</a>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm mb-6 max-w-xs">Your digital clinic for evidence-based wellness protocols and clinical nutritional advice.</p>
+<p class="font-caption text-caption text-on-surface-variant">&#169; <span data-current-year>2026</span> HealthyfiKey. All rights reserved.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold mb-4 uppercase tracking-wider">Company</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="legal/about-us.html">About Us</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="legal/contact-us.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold mb-4 uppercase tracking-wider">Legal</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="legal/privacy-policy.html">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="legal/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold mb-4 uppercase tracking-wider">Disclosures</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="legal/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="legal/medical-disclaimer.html">Medical Disclaimer</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
