@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SupplStore — Independent Supplement Buyer Guides & Transparency Hub</title>
+  <meta name="description" content="Independent, research-backed supplement buyer guides. Ingredient checks, official-source verification, and side-by-side pricing." />
+  <meta property="og:title" content="SupplStore — Independent Supplement Buyer Guides & Transparency Hub" />
+  <meta property="og:description" content="Independent, research-backed supplement buyer guides. Ingredient checks, official-source verification, and side-by-side pricing." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="min-h-screen bg-[#F9F8F5] font-sans text-[#1A1A1A]">
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-30 border-b border-[#ECE7DA] bg-[#F9F8F5]/95 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+      <!-- Top bar: logo + nav -->
+      <div class="flex h-20 flex-wrap items-center justify-between gap-4">
+        <a href="index.html" class="flex shrink-0 items-center gap-3">
+          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1F3D2E] font-serif text-lg font-bold text-white">
+            SS
+          </div>
+          <div>
+            <div class="font-serif text-xl font-bold leading-tight text-[#1A1A1A]">SupplStore</div>
+            <div class="text-[10px] font-semibold uppercase tracking-widest text-[#8A8A84]">Buyer Guides · 246 Products</div>
+          </div>
+        </a>
+
+        <nav class="flex items-center gap-6 text-sm font-medium text-[#3A3A38]">
+          <a href="index.html" class="hover:text-[#1A1A1A]">Catalog</a>
+          <a href="methodology.html" class="hover:text-[#1A1A1A]">How we verify</a>
+          <a href="/disclaimer" class="hover:text-[#1A1A1A]">Disclaimer</a>
+        </nav>
+      </div>
+
+      <!-- Bottom row: category sub-navigation (links to dedicated category pages) -->
+      <nav aria-label="Product categories" class="flex items-center gap-6 overflow-x-auto whitespace-nowrap px-0.5 pb-5 text-sm font-medium text-[#3A3A38] lg:justify-center">
+        <a href="/category/weight-management" class="shrink-0 hover:text-[#1A1A1A]">Weight Management</a>
+        <a href="/category/sensory-sleep-wellness" class="shrink-0 hover:text-[#1A1A1A]">Sensory & Sleep Wellness</a>
+        <a href="/category/mens-wellness" class="shrink-0 hover:text-[#1A1A1A]">Men's Wellness</a>
+        <a href="/category/blood-sugar-support" class="shrink-0 hover:text-[#1A1A1A]">Blood Sugar</a>
+        <a href="/category/joint-nerve-support" class="shrink-0 hover:text-[#1A1A1A]">Joint & Nerve Support</a>
+        <a href="/category/digestive-wellness" class="shrink-0 hover:text-[#1A1A1A]">Digestive Wellness</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="border-b border-[#ECE7DA] bg-[#F9F8F5]">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-24">
+
+      <!-- Left: copy -->
+      <div>
+        <span class="inline-flex items-center gap-2 rounded-full border border-[#C8D9C2] bg-[#EAF0E7] px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-[#2F5233]">
+          <span class="h-1.5 w-1.5 rounded-full bg-[#2F5233]"></span>
+          Truth-First Supplement Guidance · United States
+        </span>
+
+        <h2 class="mt-6 font-serif text-4xl font-black leading-[1.1] text-[#1A1A1A] sm:text-5xl lg:text-6xl">
+          Premium buyer guides for
+          <em class="bg-gradient-to-r from-[#1F3D2E] to-[#A9793C] bg-clip-text text-transparent">natural wellness</em>
+          products.
+        </h2>
+
+        <p class="mt-6 max-w-md text-[15px] leading-relaxed text-[#555555]">
+          246 independently reviewed supplements across 16 wellness categories. Official-source verification, ingredient checks, and side-by-side pricing — built for buyers who do their homework.
+        </p>
+      </div>
+
+      <!-- Right: Editor's picks — data-driven, rotates every 5s (see app.js) -->
+      <div>
+        <div id="hero-picks-card" class="rounded-3xl border-t-4 border-t-[#A9793C] bg-white p-6 shadow-[0_10px_40px_rgba(26,26,26,0.08)] sm:p-8">
+          <div class="mb-2 flex items-center justify-between border-b border-[#ECE7DA] pb-4">
+            <h3 class="font-serif text-lg font-bold text-[#1A1A1A]">Editor's picks</h3>
+            <span class="rounded-full bg-[#F1EEE4] px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#8A6D3B]">Top Sourced</span>
+          </div>
+          <div id="hero-picks" class="space-y-1 pt-2 opacity-100 transition-opacity duration-300 ease-in-out">
+            <!-- JS-rendered: cycles through real products from products.js -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CATEGORY SHOWCASE ============ -->
+  <main id="category-showcase">
+    <!-- JS-rendered: one section per category that has products (header,
+         6-card grid, inline "See all" expansion). Nothing is hardcoded
+         here — see renderCategoryShowcase() in app.js. -->
+  </main>
+
+  <!-- ============ FAQ ============ -->
+  <section class="border-b border-[#ECE7DA] bg-[#F8F6F0]">
+    <div class="mx-auto max-w-3xl px-4 pt-16 text-center sm:px-6 lg:px-8">
+      <span class="text-xs font-semibold uppercase tracking-widest text-[#A9793C]">Frequently Asked Questions</span>
+      <h2 class="mt-3 font-serif text-3xl font-bold text-[#1A1A1A] sm:text-4xl">Got questions? We've got answers.</h2>
+      <p class="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-[#555555]">
+        Straight answers about how SupplStore is run — our audit process, our affiliate relationships, and what to expect from a buyer guide.
+      </p>
+    </div>
+    <div class="mx-auto max-w-3xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
+      <div id="faq-list" class="divide-y divide-[#ECE7DA] rounded-3xl border border-[#ECE7DA] bg-white">
+        <!-- JS-rendered accordion items — see renderFAQ() in app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER (global, 4 columns) ============ -->
+  <footer class="border-t border-[#ECE7DA] bg-[#F8F6F0] text-[#1A1A1A]">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+
+      <!-- Col 1: brand -->
+      <div>
+        <div class="mb-3 flex items-center gap-2">
+          <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1F3D2E] font-serif text-sm font-bold text-white">SS</div>
+          <div class="font-serif text-lg font-bold">SupplStore</div>
+        </div>
+        <div class="mb-3 text-[10px] font-semibold uppercase tracking-widest text-[#8A8A84]">Premium Buyer Guides</div>
+        <p class="max-w-xs text-sm leading-relaxed text-[#555555]">
+          Independent product audits and buyer guides for wellness shoppers who want the full picture before they order.
+        </p>
+      </div>
+
+      <!-- Col 2: categories -->
+      <div>
+        <div class="mb-4 font-serif text-sm font-bold uppercase tracking-wide">Categories</div>
+        <ul class="space-y-2.5 text-sm text-[#555555]">
+          <li><a href="/category/weight-management" class="hover:text-[#1A1A1A]">Weight Management</a></li>
+          <li><a href="/category/sensory-sleep-wellness" class="hover:text-[#1A1A1A]">Sensory & Sleep</a></li>
+          <li><a href="/category/mens-wellness" class="hover:text-[#1A1A1A]">Men's Wellness</a></li>
+          <li><a href="/category/blood-sugar-support" class="hover:text-[#1A1A1A]">Blood Sugar Support</a></li>
+          <li><a href="/category/joint-nerve-support" class="hover:text-[#1A1A1A]">Joint & Nerve</a></li>
+          <li><a href="/category/digestive-wellness" class="hover:text-[#1A1A1A]">Digestive</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: information -->
+      <div>
+        <div class="mb-4 font-serif text-sm font-bold uppercase tracking-wide">Information</div>
+        <ul class="space-y-2.5 text-sm text-[#555555]">
+          <li><a href="/about" class="hover:text-[#1A1A1A]">About</a></li>
+          <li><a href="editorial-team.html" class="hover:text-[#1A1A1A]">Editorial team</a></li>
+          <li><a href="methodology.html" class="hover:text-[#1A1A1A]">Methodology</a></li>
+          <li><a href="ingredient-guides.html" class="hover:text-[#1A1A1A]">Ingredient guides</a></li>
+          <li><a href="home-remedies.html" class="hover:text-[#1A1A1A]">Home remedies</a></li>
+          <li><a href="/contact" class="hover:text-[#1A1A1A]">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: legal -->
+      <div>
+        <div class="mb-4 font-serif text-sm font-bold uppercase tracking-wide">Legal</div>
+        <ul class="space-y-2.5 text-sm text-[#555555]">
+          <li><a href="/privacy-policy" class="hover:text-[#1A1A1A]">Privacy policy</a></li>
+          <li><a href="/terms" class="hover:text-[#1A1A1A]">Terms of service</a></li>
+          <li><a href="/disclaimer" class="hover:text-[#1A1A1A]">Health disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-[#ECE7DA]">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-[#8A8A84] sm:flex-row sm:px-6 lg:px-8">
+        <p>© 2026 SupplStore · This site contains affiliate links. We may earn a commission on qualifying purchases.</p>
+        <p>Not medical advice. Consult a healthcare professional before use.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

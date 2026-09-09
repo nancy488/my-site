@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How We Verify — SupplStore</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="min-h-screen bg-[#F9F8F5] font-sans text-[#1A1A1A]">
+
+  <header class="border-b border-[#ECE7DA] bg-[#F9F8F5]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-20 flex-wrap items-center justify-between gap-4">
+        <a href="index.html" class="flex shrink-0 items-center gap-3">
+          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1F3D2E] font-serif text-lg font-bold text-white">SS</div>
+          <div>
+            <div class="font-serif text-xl font-bold leading-tight text-[#1A1A1A]">SupplStore</div>
+            <div class="text-[10px] font-semibold uppercase tracking-widest text-[#8A8A84]">Buyer Guides · 246 Products</div>
+          </div>
+        </a>
+        <nav class="flex items-center gap-6 text-sm font-medium text-[#3A3A38]">
+          <a href="index.html" class="hover:text-[#1A1A1A]">Catalog</a>
+          <a href="methodology.html" class="hover:text-[#1A1A1A]">How we verify</a>
+          <a href="/disclaimer" class="hover:text-[#1A1A1A]">Disclaimer</a>
+        </nav>
+      </div>
+      <nav aria-label="Product categories" class="flex items-center gap-6 overflow-x-auto whitespace-nowrap px-0.5 pb-5 text-sm font-medium text-[#3A3A38] lg:justify-center">
+        <a href="/category/weight-management" class="shrink-0 hover:text-[#1A1A1A]">Weight Management</a>
+        <a href="/category/sensory-sleep-wellness" class="shrink-0 hover:text-[#1A1A1A]">Sensory & Sleep Wellness</a>
+        <a href="/category/mens-wellness" class="shrink-0 hover:text-[#1A1A1A]">Men's Wellness</a>
+        <a href="/category/blood-sugar-support" class="shrink-0 hover:text-[#1A1A1A]">Blood Sugar</a>
+        <a href="/category/joint-nerve-support" class="shrink-0 hover:text-[#1A1A1A]">Joint & Nerve Support</a>
+        <a href="/category/digestive-wellness" class="shrink-0 hover:text-[#1A1A1A]">Digestive Wellness</a>
+      </nav>
+    </div>
+  </header>
+
+<main class="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="prose-page space-y-5 leading-relaxed text-[#333331]">
+<h1 class="mb-2 font-serif text-3xl font-bold sm:text-4xl">How We Verify</h1>
+<p class="text-[15px]">Every SupplStore buyer guide follows the same checks before it's published:</p>
+<ol class="list-decimal space-y-3 pl-5 text-[15px]"><li><strong>Source claims.</strong> We read the product's official page directly and note exactly what it claims &mdash; no relying on secondhand summaries.</li><li><strong>Ingredient list.</strong> We record the labeled ingredients and serving size exactly as published by the brand.</li><li><strong>Pricing.</strong> We check official pricing across available bundle sizes, including any subscription or one-time purchase options.</li><li><strong>Fine print.</strong> We look for refund windows, auto-ship terms, and shipping restrictions worth knowing before you order.</li></ol>
+<p class="text-[15px]">Guides are re-checked periodically, since brands change formulas, pricing, and offers without much notice.</p>
+    </div>
+  </main>
+
+  <footer class="border-t border-[#ECE7DA] bg-[#F8F6F0] text-[#1A1A1A]">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+      <div>
+        <div class="mb-3 flex items-center gap-2">
+          <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1F3D2E] font-serif text-sm font-bold text-white">SS</div>
+          <div class="font-serif text-lg font-bold">SupplStore</div>
+        </div>
+        <div class="mb-3 text-[10px] font-semibold uppercase tracking-widest text-[#8A8A84]">Premium Buyer Guides</div>
+        <p class="max-w-xs text-sm leading-relaxed text-[#555555]">
+          Independent product audits and buyer guides for wellness shoppers who want the full picture before they order.
+        </p>
+      </div>
+      <div>
+        <div class="mb-4 font-serif text-sm font-bold uppercase tracking-wide">Categories</div>
+        <ul class="space-y-2.5 text-sm text-[#555555]">
+          <li><a href="/category/weight-management" class="hover:text-[#1A1A1A]">Weight Management</a></li>
+          <li><a href="/category/sensory-sleep-wellness" class="hover:text-[#1A1A1A]">Sensory & Sleep</a></li>
+          <li><a href="/category/mens-wellness" class="hover:text-[#1A1A1A]">Men's Wellness</a></li>
+          <li><a href="/category/blood-sugar-support" class="hover:text-[#1A1A1A]">Blood Sugar Support</a></li>
+          <li><a href="/category/joint-nerve-support" class="hover:text-[#1A1A1A]">Joint & Nerve</a></li>
+          <li><a href="/category/digestive-wellness" class="hover:text-[#1A1A1A]">Digestive</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="mb-4 font-serif text-sm font-bold uppercase tracking-wide">Information</div>
+        <ul class="space-y-2.5 text-sm text-[#555555]">
+          <li><a href="/about" class="hover:text-[#1A1A1A]">About</a></li>
+          <li><a href="editorial-team.html" class="hover:text-[#1A1A1A]">Editorial team</a></li>
+          <li><a href="methodology.html" class="hover:text-[#1A1A1A]">Methodology</a></li>
+          <li><a href="ingredient-guides.html" class="hover:text-[#1A1A1A]">Ingredient guides</a></li>
+          <li><a href="home-remedies.html" class="hover:text-[#1A1A1A]">Home remedies</a></li>
+          <li><a href="/contact" class="hover:text-[#1A1A1A]">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="mb-4 font-serif text-sm font-bold uppercase tracking-wide">Legal</div>
+        <ul class="space-y-2.5 text-sm text-[#555555]">
+          <li><a href="/privacy-policy" class="hover:text-[#1A1A1A]">Privacy policy</a></li>
+          <li><a href="/terms" class="hover:text-[#1A1A1A]">Terms of service</a></li>
+          <li><a href="/disclaimer" class="hover:text-[#1A1A1A]">Health disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-[#ECE7DA]">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-[#8A8A84] sm:flex-row sm:px-6 lg:px-8">
+        <p>© 2026 SupplStore · This site contains affiliate links. We may earn a commission on qualifying purchases.</p>
+        <p>Not medical advice. Consult a healthcare professional before use.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

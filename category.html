@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Category — SupplStore</title>
+  <meta name="description" content="Independent, research-backed supplement buyer guides. Ingredient checks, official-source verification, and side-by-side pricing." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="min-h-screen bg-[#F9F8F5] font-sans text-[#1A1A1A]">
+
+  <!-- ============ HEADER (same as index.html) ============ -->
+  <header class="sticky top-0 z-30 border-b border-[#ECE7DA] bg-[#F9F8F5]/95 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-20 flex-wrap items-center justify-between gap-4">
+        <a href="index.html" class="flex shrink-0 items-center gap-3">
+          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1F3D2E] font-serif text-lg font-bold text-white">SS</div>
+          <div>
+            <div class="font-serif text-xl font-bold leading-tight text-[#1A1A1A]">SupplStore</div>
+            <div class="text-[10px] font-semibold uppercase tracking-widest text-[#8A8A84]">Buyer Guides · 246 Products</div>
+          </div>
+        </a>
+        <nav class="flex items-center gap-6 text-sm font-medium text-[#3A3A38]">
+          <a href="index.html" class="hover:text-[#1A1A1A]">Catalog</a>
+          <a href="methodology.html" class="hover:text-[#1A1A1A]">How we verify</a>
+          <a href="/disclaimer" class="hover:text-[#1A1A1A]">Disclaimer</a>
+        </nav>
+      </div>
+      <nav aria-label="Product categories" class="flex items-center gap-6 overflow-x-auto whitespace-nowrap px-0.5 pb-5 text-sm font-medium text-[#3A3A38] lg:justify-center">
+        <a href="/category/weight-management" class="shrink-0 hover:text-[#1A1A1A]">Weight Management</a>
+        <a href="/category/sensory-sleep-wellness" class="shrink-0 hover:text-[#1A1A1A]">Sensory & Sleep Wellness</a>
+        <a href="/category/mens-wellness" class="shrink-0 hover:text-[#1A1A1A]">Men's Wellness</a>
+        <a href="/category/blood-sugar-support" class="shrink-0 hover:text-[#1A1A1A]">Blood Sugar</a>
+        <a href="/category/joint-nerve-support" class="shrink-0 hover:text-[#1A1A1A]">Joint & Nerve Support</a>
+        <a href="/category/digestive-wellness" class="shrink-0 hover:text-[#1A1A1A]">Digestive Wellness</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ CATEGORY PAGE HEADER ============ -->
+  <div class="border-b border-[#ECE7DA] bg-[#F8F6F0]">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <a href="index.html" class="mb-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#555555] hover:text-[#1A1A1A]">← Back to Catalog</a>
+      <h1 id="category-heading" class="font-serif text-3xl font-bold text-[#1A1A1A] sm:text-4xl">Loading category…</h1>
+      <p id="category-audit-text" class="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#555555]">
+        Every product below has passed our four-screen audit: official-source verification, ingredient-dose disclosures, U.S. GMP-facility confirmation, and refund-window honesty.
+      </p>
+    </div>
+  </div>
+
+  <!-- ============ FULL INVENTORY GRID ============ -->
+  <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div id="category-empty" class="hidden rounded-3xl border border-dashed border-[#DDD8CB] bg-white py-16 text-center">
+      <p class="text-sm text-[#555555]">No buyer guides published in this category yet — check back soon.</p>
+    </div>
+    <div id="category-grid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- JS-rendered product cards -->
+    </div>
+  </main>
+
+  <!-- ============ FOOTER (same as index.html) ============ -->
+  <footer class="border-t border-[#ECE7DA] bg-[#F8F6F0] text-[#1A1A1A]">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+      <div>
+        <div class="mb-3 flex items-center gap-2">
+          <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1F3D2E] font-serif text-sm font-bold text-white">SS</div>
+          <div class="font-serif text-lg font-bold">SupplStore</div>
+        </div>
+        <div class="mb-3 text-[10px] font-semibold uppercase tracking-widest text-[#8A8A84]">Premium Buyer Guides</div>
+        <p class="max-w-xs text-sm leading-relaxed text-[#555555]">
+          Independent product audits and buyer guides for wellness shoppers who want the full picture before they order.
+        </p>
+      </div>
+      <div>
+        <div class="mb-4 font-serif text-sm font-bold uppercase tracking-wide">Categories</div>
+        <ul class="space-y-2.5 text-sm text-[#555555]">
+          <li><a href="/category/weight-management" class="hover:text-[#1A1A1A]">Weight Management</a></li>
+          <li><a href="/category/sensory-sleep-wellness" class="hover:text-[#1A1A1A]">Sensory & Sleep</a></li>
+          <li><a href="/category/mens-wellness" class="hover:text-[#1A1A1A]">Men's Wellness</a></li>
+          <li><a href="/category/blood-sugar-support" class="hover:text-[#1A1A1A]">Blood Sugar Support</a></li>
+          <li><a href="/category/joint-nerve-support" class="hover:text-[#1A1A1A]">Joint & Nerve</a></li>
+          <li><a href="/category/digestive-wellness" class="hover:text-[#1A1A1A]">Digestive</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="mb-4 font-serif text-sm font-bold uppercase tracking-wide">Information</div>
+        <ul class="space-y-2.5 text-sm text-[#555555]">
+          <li><a href="/about" class="hover:text-[#1A1A1A]">About</a></li>
+          <li><a href="editorial-team.html" class="hover:text-[#1A1A1A]">Editorial team</a></li>
+          <li><a href="methodology.html" class="hover:text-[#1A1A1A]">Methodology</a></li>
+          <li><a href="ingredient-guides.html" class="hover:text-[#1A1A1A]">Ingredient guides</a></li>
+          <li><a href="home-remedies.html" class="hover:text-[#1A1A1A]">Home remedies</a></li>
+          <li><a href="/contact" class="hover:text-[#1A1A1A]">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="mb-4 font-serif text-sm font-bold uppercase tracking-wide">Legal</div>
+        <ul class="space-y-2.5 text-sm text-[#555555]">
+          <li><a href="/privacy-policy" class="hover:text-[#1A1A1A]">Privacy policy</a></li>
+          <li><a href="/terms" class="hover:text-[#1A1A1A]">Terms of service</a></li>
+          <li><a href="/disclaimer" class="hover:text-[#1A1A1A]">Health disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-[#ECE7DA]">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-[#8A8A84] sm:flex-row sm:px-6 lg:px-8">
+        <p>© 2026 SupplStore · This site contains affiliate links. We may earn a commission on qualifying purchases.</p>
+        <p>Not medical advice. Consult a healthcare professional before use.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script>
+    (function renderCategoryPage() {
+      const slug = new URLSearchParams(window.location.search).get("cat");
+      const category = CATEGORIES.find((c) => c.slug === slug);
+
+      const heading = document.getElementById("category-heading");
+      const auditText = document.getElementById("category-audit-text");
+      const grid = document.getElementById("category-grid");
+      const empty = document.getElementById("category-empty");
+
+      if (!category) {
+        heading.textContent = "Category not found";
+        auditText.textContent = `We couldn't find a category for "${slug ?? ""}". Head back to the catalog to browse everything we cover.`;
+        grid.classList.add("hidden");
+        return;
+      }
+
+      document.getElementById("page-title").textContent = `${category.name} — SupplStore`;
+      heading.textContent = `All ${category.name} products (${PRODUCTS.filter((p) => p.categorySlug === category.slug).length})`;
+      // Audit & compliance subtitle stays the same standard text for every
+      // category (it's describing our methodology, not the category).
+
+      const products = PRODUCTS.filter((p) => p.categorySlug === category.slug);
+
+      if (products.length === 0) {
+        grid.classList.add("hidden");
+        empty.classList.remove("hidden");
+        return;
+      }
+
+      grid.innerHTML = products.map(buildProductCardHTML).join("");
+    })();
+  </script>
+</body>
+</html>
