@@ -53,10 +53,15 @@
         </nav>
       </div>
 
-      <!-- Bottom row: category pills (rendered by app.js) -->
-      <div id="category-pills" class="flex flex-wrap gap-2 pb-5" aria-label="Filter by category">
-        <!-- JS-rendered: "All" pill + 16 category pills with live counts -->
-      </div>
+      <!-- Bottom row: category sub-navigation (links to dedicated category pages) -->
+      <nav aria-label="Product categories" class="flex items-center gap-6 overflow-x-auto whitespace-nowrap px-0.5 pb-5 text-sm font-medium text-[#3A3A38] lg:justify-center">
+        <a href="/category/weight-management" class="shrink-0 hover:text-[#1A1A1A]">Weight Management</a>
+        <a href="/category/sensory-sleep-wellness" class="shrink-0 hover:text-[#1A1A1A]">Sensory & Sleep Wellness</a>
+        <a href="/category/mens-wellness" class="shrink-0 hover:text-[#1A1A1A]">Men's Wellness</a>
+        <a href="/category/blood-sugar-support" class="shrink-0 hover:text-[#1A1A1A]">Blood Sugar</a>
+        <a href="/category/joint-nerve-support" class="shrink-0 hover:text-[#1A1A1A]">Joint & Nerve Support</a>
+        <a href="/category/digestive-wellness" class="shrink-0 hover:text-[#1A1A1A]">Digestive Wellness</a>
+      </nav>
     </div>
   </header>
 
@@ -90,7 +95,7 @@
             <span class="rounded-full bg-[#F1EEE4] px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#8A6D3B]">Top Sourced</span>
           </div>
           <div id="hero-picks" class="space-y-1 pt-2 opacity-100 transition-opacity duration-300 ease-in-out">
-            <!-- JS-rendered: cycles through real products from data/products.json -->
+            <!-- JS-rendered: cycles through real products from products.js -->
           </div>
         </div>
       </div>
@@ -98,16 +103,28 @@
     </div>
   </section>
 
-  <!-- ============ PRODUCT GRID ============ -->
-  <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-    <div id="empty-state" class="hidden rounded-3xl border border-dashed border-[#DDD8CB] bg-white py-16 text-center">
-      <p class="text-sm text-[#555555]">No buyer guides in this category yet — check back soon.</p>
-    </div>
-
-    <div id="product-grid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      <!-- JS-rendered product cards. Nothing is hardcoded here. -->
-    </div>
+  <!-- ============ CATEGORY SHOWCASE ============ -->
+  <main id="category-showcase">
+    <!-- JS-rendered: one section per category that has products (header,
+         6-card grid, inline "See all" expansion). Nothing is hardcoded
+         here — see renderCategoryShowcase() in app.js. -->
   </main>
+
+  <!-- ============ FAQ ============ -->
+  <section class="border-b border-[#ECE7DA] bg-[#F8F6F0]">
+    <div class="mx-auto max-w-3xl px-4 pt-16 text-center sm:px-6 lg:px-8">
+      <span class="text-xs font-semibold uppercase tracking-widest text-[#A9793C]">Frequently Asked Questions</span>
+      <h2 class="mt-3 font-serif text-3xl font-bold text-[#1A1A1A] sm:text-4xl">Got questions? We've got answers.</h2>
+      <p class="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-[#555555]">
+        Straight answers about how SupplStore is run — our audit process, our affiliate relationships, and what to expect from a buyer guide.
+      </p>
+    </div>
+    <div class="mx-auto max-w-3xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
+      <div id="faq-list" class="divide-y divide-[#ECE7DA] rounded-3xl border border-[#ECE7DA] bg-white">
+        <!-- JS-rendered accordion items — see renderFAQ() in app.js -->
+      </div>
+    </div>
+  </section>
 
   <!-- ============ FOOTER (global, 4 columns) ============ -->
   <footer class="border-t border-[#ECE7DA] bg-[#F8F6F0] text-[#1A1A1A]">
@@ -129,12 +146,12 @@
       <div>
         <div class="mb-4 font-serif text-sm font-bold uppercase tracking-wide">Categories</div>
         <ul class="space-y-2.5 text-sm text-[#555555]">
-          <li><a href="index.html" class="hover:text-[#1A1A1A]">Weight Management</a></li>
-          <li><a href="index.html" class="hover:text-[#1A1A1A]">Sensory & Sleep</a></li>
-          <li><a href="index.html" class="hover:text-[#1A1A1A]">Men's Wellness</a></li>
-          <li><a href="index.html" class="hover:text-[#1A1A1A]">Blood Sugar Support</a></li>
-          <li><a href="index.html" class="hover:text-[#1A1A1A]">Joint & Nerve</a></li>
-          <li><a href="index.html" class="hover:text-[#1A1A1A]">Digestive</a></li>
+          <li><a href="/category/weight-management" class="hover:text-[#1A1A1A]">Weight Management</a></li>
+          <li><a href="/category/sensory-sleep-wellness" class="hover:text-[#1A1A1A]">Sensory & Sleep</a></li>
+          <li><a href="/category/mens-wellness" class="hover:text-[#1A1A1A]">Men's Wellness</a></li>
+          <li><a href="/category/blood-sugar-support" class="hover:text-[#1A1A1A]">Blood Sugar Support</a></li>
+          <li><a href="/category/joint-nerve-support" class="hover:text-[#1A1A1A]">Joint & Nerve</a></li>
+          <li><a href="/category/digestive-wellness" class="hover:text-[#1A1A1A]">Digestive</a></li>
         </ul>
       </div>
 
@@ -170,6 +187,7 @@
     </div>
   </footer>
 
+  <script src="products.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
