@@ -313,3 +313,76 @@ function buildProductCardHTML(product) {
       </div>
     </div>`;
 }
+
+/* ---------------------------------------------------------------------
+   Category pill bar — "All" + every category, each with a live count
+   computed from PRODUCTS. Shared across every page (homepage, category
+   pages, and the informational/legal pages) so the count is always
+   accurate wherever it appears. Pass the slug that should show as
+   "active" (the special key "all" for the homepage), or null/undefined
+   for pages that aren't part of the catalog browsing flow.
+   ------------------------------------------------------------------ */
+function renderCategoryPillsHTML(activeKey) {
+  const items = [{ key: "all", name: "All", href: "index.html", count: PRODUCTS.length }].concat(
+    CATEGORIES.map((c) => ({
+      key: c.slug,
+      name: c.name,
+      href: `/category/${c.slug}`,
+      count: PRODUCTS.filter((p) => p.categorySlug === c.slug).length,
+    }))
+  );
+
+  return items
+    .map((item) => {
+      const isActive = item.key === activeKey;
+      const base =
+        "inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors";
+      const activeClasses = isActive
+        ? "bg-[#1F3D2E] border-[#1F3D2E] text-white"
+        : "bg-white border-[#E3DFD3] text-[#3A3A38] hover:border-[#1F3D2E]";
+      const countClasses = isActive ? "bg-white/20 text-white" : "bg-[#F1EEE4] text-[#7A7A73]";
+      return `<a href="${item.href}" class="${base} ${activeClasses}">
+        <span>${item.name}</span>
+        <span class="rounded-full px-1.5 py-0.5 text-xs ${countClasses}">${item.count}</span>
+      </a>`;
+    })
+    .join("");
+}
+
+// Escapes user-typed text before it's dropped into innerHTML (e.g. the
+// "no results for ..." message), so a search query can never be
+// interpreted as markup.
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ---------------------------------------------------------------------
+   Header search box — shared across every page. On the homepage it
+   filters the category showcase in real time as you type (title,
+   category, or description). On any other page, since there's no
+   product grid to filter there, pressing Enter takes you to the
+   homepage with the search applied.
+   ------------------------------------------------------------------ */
+function initSearch() {
+  const input = document.getElementById("site-search");
+  if (!input) return;
+
+  const isHomepage = typeof renderCategoryShowcase === "function" && !!document.getElementById("category-showcase");
+
+  const initialQuery = new URLSearchParams(window.location.search).get("q") || "";
+  if (initialQuery) input.value = initialQuery;
+
+  if (isHomepage) {
+    if (initialQuery) renderCategoryShowcase(initialQuery);
+    input.addEventListener("input", () => renderCategoryShowcase(input.value));
+  } else {
+    input.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter") return;
+      e.preventDefault();
+      const q = input.value.trim();
+      window.location.href = q ? `index.html?q=${encodeURIComponent(q)}` : "index.html";
+    });
+  }
+}
