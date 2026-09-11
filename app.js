@@ -5,11 +5,9 @@
    sections with inline "see all" expansion, and the FAQ accordion. */
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("category-pills-nav").innerHTML = renderCategoryPillsHTML("all");
   initHeroPicks(PRODUCTS);
   renderCategoryShowcase();
   renderFAQ();
-  initSearch();
 });
 
 /* ============ HERO: "Editor's picks" — auto-rotating ============ */
@@ -95,52 +93,30 @@ function pickRow(product) {
 // Renders one section per category that actually has products (skips
 // the categories with zero products so far — add products in
 // products.js and a section appears automatically).
-// An optional search query filters PRODUCTS by title/category/description
-// before grouping; while a query is active, matches show in full (no
-// 6-item cap) since a search result set shouldn't need "see all".
-function renderCategoryShowcase(query) {
+function renderCategoryShowcase() {
   const container = document.getElementById("category-showcase");
   if (!container) return;
 
-  const q = (query || "").trim().toLowerCase();
-  const isSearching = q.length > 0;
-  const pool = isSearching
-    ? PRODUCTS.filter(
-        (p) =>
-          p.title.toLowerCase().includes(q) ||
-          p.categoryName.toLowerCase().includes(q) ||
-          p.description.toLowerCase().includes(q)
-      )
-    : PRODUCTS;
-
   const sections = CATEGORIES.map((cat) => {
-    const products = pool.filter((p) => p.categorySlug === cat.slug);
-    return products.length > 0 ? buildCategorySection(cat, products, isSearching) : "";
+    const products = PRODUCTS.filter((p) => p.categorySlug === cat.slug);
+    return products.length > 0 ? buildCategorySection(cat, products) : "";
   }).join("");
 
-  if (sections.trim()) {
-    container.innerHTML = sections;
-  } else if (isSearching) {
-    container.innerHTML = `
-      <div class="mx-auto my-10 max-w-7xl rounded-3xl border border-dashed border-[#DDD8CB] bg-white px-4 py-16 text-center sm:px-6 lg:px-8">
-        <p class="text-sm text-[#555555]">No products match "${escapeHtml(query.trim())}". Try a different search term.</p>
-      </div>`;
-  } else {
-    container.innerHTML = `
-      <div class="mx-auto my-10 max-w-7xl rounded-3xl border border-dashed border-[#DDD8CB] bg-white px-4 py-16 text-center sm:px-6 lg:px-8">
-        <p class="text-sm text-[#555555]">No buyer guides published yet — check back soon.</p>
-      </div>`;
-  }
+  container.innerHTML =
+    sections.trim() ||
+    `<div class="rounded-3xl border border-dashed border-[#DDD8CB] bg-white py-16 text-center">
+       <p class="text-sm text-[#555555]">No buyer guides published yet — check back soon.</p>
+     </div>`;
 
   container.querySelectorAll("[data-see-all]").forEach((btn) => {
     btn.addEventListener("click", () => toggleSeeAll(btn));
   });
 }
 
-function buildCategorySection(cat, products, isSearching) {
+function buildCategorySection(cat, products) {
   const INITIAL_COUNT = 6;
-  const initial = isSearching ? products : products.slice(0, INITIAL_COUNT);
-  const rest = isSearching ? [] : products.slice(INITIAL_COUNT);
+  const initial = products.slice(0, INITIAL_COUNT);
+  const rest = products.slice(INITIAL_COUNT);
 
   const initialGrid = `
     <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -126,6 +126,48 @@ const CATEGORIES = [
 
 const PRODUCTS = [
   {
+    id: "tonicgreens",
+    title: "TonicGreens",
+    categorySlug: "general-wellness",
+    categoryName: "General Wellness",
+    subdomain: "tonicgreens.supplstore.com",
+    shape: "pouch",
+    accentColor: "#4F7942",
+    badge: "New",
+    ratingMeta: "Official-source verified",
+    description: "An independent look at TonicGreens' daily greens formula, ingredient sourcing, and label claims, plus how its official pricing compares across bundle sizes.",
+    guideUrl: "review.html?product=tonicgreens",
+    affiliateUrl: "https://www.tonicgreens.example",
+  },
+  {
+    id: "pineal-10x-gold",
+    title: "Pineal 10X Gold",
+    categorySlug: "sensory-sleep-wellness",
+    categoryName: "Sensory & Sleep Wellness",
+    subdomain: "pineal10xgold.supplstore.com",
+    shape: "dropper",
+    accentColor: "#7A5A28",
+    badge: "New",
+    ratingMeta: "Official-source verified",
+    description: "Our audit of Pineal 10X Gold walks through its drop-based formula, suggested use, and sourcing claims, checked against the brand's official product page.",
+    guideUrl: "review.html?product=pineal-10x-gold",
+    affiliateUrl: "https://www.pineal10xgold.example",
+  },
+  {
+    id: "hydracellum",
+    title: "Hydracellum",
+    categorySlug: "skin-health",
+    categoryName: "Skin Health",
+    subdomain: "hydracellum.supplstore.com",
+    shape: "bottle",
+    accentColor: "#3D7A8A",
+    badge: "New",
+    ratingMeta: "Official-source verified",
+    description: "A source-verified breakdown of Hydracellum's skin-hydration formula and manufacturing claims, with a side-by-side look at official page pricing.",
+    guideUrl: "review.html?product=hydracellum",
+    affiliateUrl: "https://www.hydracellum.example",
+  },
+  {
     id: "cardio-slim-tea",
     title: "Cardio Slim Tea",
     categorySlug: "weight-management",
@@ -314,75 +356,40 @@ function buildProductCardHTML(product) {
     </div>`;
 }
 
-/* ---------------------------------------------------------------------
-   Category pill bar — "All" + every category, each with a live count
-   computed from PRODUCTS. Shared across every page (homepage, category
-   pages, and the informational/legal pages) so the count is always
-   accurate wherever it appears. Pass the slug that should show as
-   "active" (the special key "all" for the homepage), or null/undefined
-   for pages that aren't part of the catalog browsing flow.
-   ------------------------------------------------------------------ */
-function renderCategoryPillsHTML(activeKey) {
-  const items = [{ key: "all", name: "All", href: "index.html", count: PRODUCTS.length }].concat(
-    CATEGORIES.map((c) => ({
-      key: c.slug,
-      name: c.name,
-      href: `/category/${c.slug}`,
-      count: PRODUCTS.filter((p) => p.categorySlug === c.slug).length,
-    }))
-  );
+/* ----------------------------------------------------------------
+   CATEGORY PILLS (shared header component)
+   Renders the "All" pill + one pill per category into the element
+   with id="category-pills". Counts read straight from PRODUCTS, so
+   this never goes stale as products are added or removed — and the
+   pills wrap onto as many lines as needed instead of scrolling.
+   On category.html the pill matching the current ?cat= is
+   highlighted; every other page highlights "All".
+------------------------------------------------------------------- */
+function renderCategoryPills() {
+  const nav = document.getElementById("category-pills");
+  if (!nav) return;
 
-  return items
-    .map((item) => {
-      const isActive = item.key === activeKey;
-      const base =
-        "inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors";
-      const activeClasses = isActive
-        ? "bg-[#1F3D2E] border-[#1F3D2E] text-white"
-        : "bg-white border-[#E3DFD3] text-[#3A3A38] hover:border-[#1F3D2E]";
-      const countClasses = isActive ? "bg-white/20 text-white" : "bg-[#F1EEE4] text-[#7A7A73]";
-      return `<a href="${item.href}" class="${base} ${activeClasses}">
-        <span>${item.name}</span>
-        <span class="rounded-full px-1.5 py-0.5 text-xs ${countClasses}">${item.count}</span>
-      </a>`;
-    })
-    .join("");
-}
+  const onCategoryPage = /category\.html$/.test(window.location.pathname);
+  const activeSlug = onCategoryPage ? new URLSearchParams(window.location.search).get("cat") : null;
 
-// Escapes user-typed text before it's dropped into innerHTML (e.g. the
-// "no results for ..." message), so a search query can never be
-// interpreted as markup.
-function escapeHtml(str) {
-  const div = document.createElement("div");
-  div.textContent = str;
-  return div.innerHTML;
-}
-
-/* ---------------------------------------------------------------------
-   Header search box — shared across every page. On the homepage it
-   filters the category showcase in real time as you type (title,
-   category, or description). On any other page, since there's no
-   product grid to filter there, pressing Enter takes you to the
-   homepage with the search applied.
-   ------------------------------------------------------------------ */
-function initSearch() {
-  const input = document.getElementById("site-search");
-  if (!input) return;
-
-  const isHomepage = typeof renderCategoryShowcase === "function" && !!document.getElementById("category-showcase");
-
-  const initialQuery = new URLSearchParams(window.location.search).get("q") || "";
-  if (initialQuery) input.value = initialQuery;
-
-  if (isHomepage) {
-    if (initialQuery) renderCategoryShowcase(initialQuery);
-    input.addEventListener("input", () => renderCategoryShowcase(input.value));
-  } else {
-    input.addEventListener("keydown", (e) => {
-      if (e.key !== "Enter") return;
-      e.preventDefault();
-      const q = input.value.trim();
-      window.location.href = q ? `index.html?q=${encodeURIComponent(q)}` : "index.html";
-    });
+  function pill(label, href, count, isActive) {
+    const base = "inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-2 text-sm transition-colors";
+    const state = isActive
+      ? "bg-[#1F3D2E] font-semibold text-white"
+      : "border border-[#E4DFD0] bg-white font-medium text-[#3A3A38] hover:border-[#1F3D2E]/40 hover:text-[#1A1A1A]";
+    const badgeState = isActive ? "bg-white/15 text-white" : "bg-[#F1EEE4] text-[#8A8A84]";
+    return `<a href="${href}" class="${base} ${state}">${label}<span class="rounded-full ${badgeState} px-1.5 py-0.5 text-xs font-semibold">${count}</span></a>`;
   }
+
+  const pillsHTML = [
+    pill("All", "index.html", PRODUCTS.length, !activeSlug),
+    ...CATEGORIES.map((cat) => {
+      const count = PRODUCTS.filter((p) => p.categorySlug === cat.slug).length;
+      return pill(cat.name, `/category/${cat.slug}`, count, activeSlug === cat.slug);
+    }),
+  ].join("");
+
+  nav.innerHTML = pillsHTML;
 }
+
+document.addEventListener("DOMContentLoaded", renderCategoryPills);
