@@ -46,11 +46,25 @@
           </div>
         </a>
 
-        <nav class="flex items-center gap-6 text-sm font-medium text-[#3A3A38]">
-          <a href="index.html" class="hover:text-[#1A1A1A]">Catalog</a>
-          <a href="methodology.html" class="hover:text-[#1A1A1A]">How we verify</a>
-          <a href="/disclaimer" class="hover:text-[#1A1A1A]">Disclaimer</a>
-        </nav>
+        <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+          <div id="site-search-wrap" class="relative">
+            <label class="flex items-center gap-2 rounded-full border border-[#E4DFD0] bg-white px-3.5 py-2 focus-within:border-[#1F3D2E]/40">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 text-[#8A8A84]" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input id="site-search-input" type="search" placeholder="Search products…" autocomplete="off" aria-label="Search products"
+                     class="w-28 bg-transparent text-sm text-[#1A1A1A] placeholder:text-[#9A968A] focus:outline-none sm:w-48">
+            </label>
+            <div id="site-search-results" class="absolute right-0 z-40 mt-2 hidden w-80 max-w-[85vw] overflow-hidden rounded-2xl border border-[#ECE7DA] bg-white shadow-[0_8px_28px_rgba(26,26,26,0.12)]"></div>
+          </div>
+
+          <nav class="flex items-center gap-6 text-sm font-medium text-[#3A3A38]">
+            <a href="index.html" class="hover:text-[#1A1A1A]">Catalog</a>
+            <a href="methodology.html" class="hover:text-[#1A1A1A]">How we verify</a>
+            <a href="/disclaimer" class="hover:text-[#1A1A1A]">Disclaimer</a>
+          </nav>
+        </div>
       </div>
 
       <!-- Bottom row: category sub-navigation (links to dedicated category pages) -->

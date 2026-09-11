@@ -393,3 +393,75 @@ function renderCategoryPills() {
 }
 
 document.addEventListener("DOMContentLoaded", renderCategoryPills);
+
+/* ----------------------------------------------------------------
+   SITE SEARCH (shared header component)
+   Live search-as-you-type dropdown for the header search box.
+   Matches against product title and category name, reading straight
+   from PRODUCTS. Enter jumps to the top match; Escape or an outside
+   click closes the dropdown.
+------------------------------------------------------------------- */
+function initSiteSearch() {
+  const wrap = document.getElementById("site-search-wrap");
+  const input = document.getElementById("site-search-input");
+  const results = document.getElementById("site-search-results");
+  if (!wrap || !input || !results) return;
+
+  function renderResults(query) {
+    const q = query.trim().toLowerCase();
+    if (!q) {
+      results.classList.add("hidden");
+      results.innerHTML = "";
+      return;
+    }
+
+    const matches = PRODUCTS.filter(
+      (p) => p.title.toLowerCase().includes(q) || p.categoryName.toLowerCase().includes(q)
+    ).slice(0, 8);
+
+    if (matches.length === 0) {
+      results.innerHTML = `<p class="px-4 py-3 text-sm text-[#8A8A84]">No products found for &ldquo;${query}&rdquo;</p>`;
+      results.classList.remove("hidden");
+      return;
+    }
+
+    results.innerHTML = matches
+      .map(
+        (p) => `
+        <a href="${p.guideUrl}" class="flex items-center justify-between gap-3 border-b border-[#F1EEE4] px-4 py-3 last:border-b-0 hover:bg-[#F9F8F5]">
+          <span class="min-w-0">
+            <span class="block truncate text-[11px] font-semibold uppercase tracking-wide text-[#A9793C]">${p.categoryName}</span>
+            <span class="block truncate font-serif text-[15px] font-bold text-[#1A1A1A]">${p.title}</span>
+          </span>
+          <span class="shrink-0 text-[#8A8A84]">\u2192</span>
+        </a>`
+      )
+      .join("");
+    results.classList.remove("hidden");
+  }
+
+  input.addEventListener("input", () => renderResults(input.value));
+  input.addEventListener("focus", () => {
+    if (input.value.trim()) renderResults(input.value);
+  });
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      input.value = "";
+      renderResults("");
+      input.blur();
+    } else if (e.key === "Enter") {
+      const first = results.querySelector("a[href]");
+      if (first) {
+        e.preventDefault();
+        window.location.href = first.getAttribute("href");
+      }
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!wrap.contains(e.target)) results.classList.add("hidden");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initSiteSearch);
